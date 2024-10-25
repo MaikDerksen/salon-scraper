@@ -14,6 +14,8 @@ class SalonSearch:
     def fetch_salon_page(self):
         formatted_salon_name = self.format_salon_name()
         search_url = f"https://www.treatwell.de/ort/{formatted_salon_name}"
+        print(f"Searching  for salon: {search_url}")
+
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 OPR/113.0.0.0'
         }
