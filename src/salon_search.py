@@ -9,7 +9,24 @@ class SalonSearch:
         self.salon_details = None
 
     def format_salon_name(self):
-        return self.salon_name.lower().replace(' ', '-').replace('ä', 'ae').replace('ö', 'oe').replace('ü', 'ue')
+        return (self.salon_name.lower()
+            .replace(' ', '-').replace("'", "-").replace('"', "-")
+            .replace("+", "-").replace("|", "-").replace(",", "-")
+            .replace("ß", "ss").replace('ä', 'ae').replace('ö', 'oe')
+            .replace('ü', 'ue').replace("@", "-").replace("(", "-")
+            .replace(")", "-").replace(".", "-").replace("&", "-")
+            .replace("/", "-").replace(":", "-").replace(";", "-")
+            .replace("?", "-").replace("!", "-").replace("#", "-")
+            .replace("=", "-").replace("%", "-").replace("‘", "-")
+            .replace("•", "-").replace("*", "-").replace("…", "-")
+            .replace("©", "-").replace("$", "-").replace("€", "-")
+            .replace("<", "-").replace(">", "-").replace("[", "-")
+            .replace("]", "-").replace("{", "-").replace("}", "-")
+            .replace("^", "-").replace("~", "-").replace("`", "-")
+            .replace("\\", "-").replace("°", "-").replace("™", "-")
+            .replace("®", "-").replace("√", "-").replace("—", "-")
+            .replace("---", "-").replace("--", "-")
+            .strip('-'))
 
     def fetch_salon_page(self):
         formatted_salon_name = self.format_salon_name()
