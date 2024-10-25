@@ -27,7 +27,9 @@ A Python application that scrapes salon information from the Treatwell website b
 
 ### To run the application, execute the following command in your terminal or command prompt:
 ```bash
-python src/main.py
+python src/run_salon_search.py #Single Salon
+or
+python src/run_city_salon_search.py #All Salon in the City
 ```
 
 ### Enter in Terminal Salon to Scrape:

@@ -1,4 +1,4 @@
-from salon_search import SalonSearch
+from salon_scraper import SalonSearch
 import json
 import os
 
