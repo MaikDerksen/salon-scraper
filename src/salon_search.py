@@ -14,7 +14,7 @@ class SalonSearch:
     def fetch_salon_page(self):
         formatted_salon_name = self.format_salon_name()
         search_url = f"https://www.treatwell.de/ort/{formatted_salon_name}"
-        print(f"Searching  for salon: {search_url}")
+        print(f"Searching for salon: {search_url}")
 
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 OPR/113.0.0.0'
@@ -25,6 +25,14 @@ class SalonSearch:
             return BeautifulSoup(response.text, 'html.parser')
         else:
             print(f"Request failed with status code {response.status_code}")
+            secound_search_url = f"https://www.treatwell.de/ort/{formatted_salon_name}-2"
+            secound_response = requests.get(secound_search_url, headers=headers)
+            print(f"Trying with URL: {secound_search_url}")
+            if secound_response.status_code == 200:
+                print(f"Request successful for salon: {self.salon_name}")
+                return BeautifulSoup(secound_response.text, 'html.parser')
+            else:
+                print(f"Request failed with status code {secound_response.status_code}")
             return None
 
     def extract_salon_details(self, soup):
