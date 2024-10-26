@@ -16,7 +16,7 @@ if __name__ == "__main__":
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
         
-        filename = f"{salon_search.format_salon_name()}_details.json"
+        filename = f"{salon_search.format_name()}_details.json"
         file_path = os.path.join(folder_path, filename)
         
         with open(file_path, 'w', encoding='utf-8') as json_file:

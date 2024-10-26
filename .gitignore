@@ -1,3 +1,15 @@
-src/__pycache__/
-json/
+# Ignore everything in __pycache__, json, and salon_names, but keep the folders
+src/__pycache__/*
+json/*
+salon_names/*
+
+# Keep the directories themselves
+!src/__pycache__/
+!json/
+!salon_names/
+
+# Ignore all .pyc files
+*.pyc
+
+# Optionally ignore other files or directories as needed
 _test.py
