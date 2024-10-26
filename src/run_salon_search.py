@@ -12,7 +12,7 @@ if __name__ == "__main__":
         salon_search.extract_salon_details(soup)
         salon_details = salon_search.get_salon_details()
         
-        folder_path = 'json'
+        folder_path = 'json/'
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
         
